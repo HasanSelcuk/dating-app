@@ -43,17 +43,16 @@ async function signIn() {
         password: password
     };
 
-    const githubRepo = "HasanSelcuk/dating-app-private"; // 🔹 Replace with your GitHub repo name
-    const githubToken = "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"; // 🔹 Replace with your GitHub token
+    const githubRepo = "HasanSelcuk/dating-app-private"; // Replace with your GitHub repo name
     const filePath = "data.json";
     const apiUrl = `https://api.github.com/repos/${githubRepo}/contents/${filePath}`;
 
-    let response = await fetch(apiUrl, { headers: { Authorization: `token ${githubToken}` } });
+    let response = await fetch(apiUrl);
     let fileData = await response.json();
 
     let content = JSON.parse(atob(fileData.content)); // Decode Base64 content
 
-    // 2️⃣ Check if the username already exists in the data
+    // Check if the username already exists in the data
     const userExists = content.some(user => user.username === userData.username && user.password === userData.password);
     
     if (userExists) {
@@ -75,12 +74,11 @@ async function signIn() {
 async function displayMatchResult() {
     const username = localStorage.getItem("username");
     const password = localStorage.getItem("password");
-    const githubRepo = "HasanSelcuk/dating-app-private"; // 🔹 Replace with your GitHub repo name
-    const githubToken = "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"; // 🔹 Replace with your GitHub token
+    const githubRepo = "HasanSelcuk/dating-app-private"; // Replace with your GitHub repo name
     const filePath = "data.json";
     const apiUrl = `https://api.github.com/repos/${githubRepo}/contents/${filePath}`;
 
-    let response = await fetch(apiUrl, { headers: { Authorization: `token ${githubToken}` } });
+    let response = await fetch(apiUrl);
     let fileData = await response.json();
 
     let content = JSON.parse(atob(fileData.content)); // Decode Base64 content
@@ -114,13 +112,12 @@ async function findBestMatch(user, allUsers) {
         let updatedUsers = calculateAllMatches(allUsers);
         // Overwrite the data.json file with the updated users for future use
         
-        const githubRepo = "HasanSelcuk/dating-app-private"; // 🔹 Replace with your GitHub repo name
-        const githubToken = "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"; // 🔹 Replace with your GitHub token
+        const githubRepo = "HasanSelcuk/dating-app-private"; // Replace with your GitHub repo name
         const filePath = "data.json";
         const apiUrl = `https://api.github.com/repos/${githubRepo}/contents/${filePath}`;
     
         // Fetch the current data.json file from GitHub
-        let response = await fetch(apiUrl, { headers: { Authorization: `token ${githubToken}` } });
+        let response = await fetch(apiUrl);
         let fileData = await response.json();
         
         let content = JSON.parse(atob(fileData.content)); // Decode Base64 content
@@ -132,7 +129,6 @@ async function findBestMatch(user, allUsers) {
         let updateResponse = await fetch(apiUrl, {
             method: "PUT",
             headers: {
-                Authorization: `token ${githubToken}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
@@ -151,7 +147,6 @@ async function findBestMatch(user, allUsers) {
         let updatedUser = updatedUsers.find(u => u.username === user.username);
 
         alert(`Our boy ${updatedUser.username} has then match ${updatedUser.matchUsername}`);
-//        alert(`You are ${updatedUser.username}`);
         return { matchUsername: updatedUser.matchUsername, matchDistance: updatedUser.matchDistance };
     }
 
@@ -276,9 +271,6 @@ function hungarianAlgorithm(costMatrix) {
 
     return matches;
 }
-
-
-
 
 // Initialize the page when loaded
 checkPageStatus(); // Check page status to show either the login form, closed message, or match result
