@@ -163,7 +163,7 @@ async function finishQuiz() {
     alert("Quiz finished! Saving your data...");
 
     const githubRepo = "HasanSelcuk/dating-app-private"; // 🔹 Replace with your GitHub repo name
-    const githubToken = "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"; // 🔹 Replace with your GitHub token
+    const githubToken = "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"; // 🔹 Replace with your GitHub token
     const filePath = "data.json";
     const apiUrl = `https://api.github.com/repos/${githubRepo}/contents/${filePath}`;
 
