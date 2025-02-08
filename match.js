@@ -44,7 +44,7 @@ async function signIn() {
     };
 
     const githubRepo = "HasanSelcuk/dating-app-private"; // 🔹 Replace with your GitHub repo name
-    const githubToken = "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"; // 🔹 Replace with your GitHub token
+    const githubToken = "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"; // 🔹 Replace with your GitHub token
     const filePath = "data.json";
     const apiUrl = `https://api.github.com/repos/${githubRepo}/contents/${filePath}`;
 
@@ -76,7 +76,7 @@ async function displayMatchResult() {
     const username = localStorage.getItem("username");
     const password = localStorage.getItem("password");
     const githubRepo = "HasanSelcuk/dating-app-private"; // 🔹 Replace with your GitHub repo name
-    const githubToken = "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"; // 🔹 Replace with your GitHub token
+    const githubToken = "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"; // 🔹 Replace with your GitHub token
     const filePath = "data.json";
     const apiUrl = `https://api.github.com/repos/${githubRepo}/contents/${filePath}`;
 
@@ -115,7 +115,7 @@ async function findBestMatch(user, allUsers) {
         // Overwrite the data.json file with the updated users for future use
         
         const githubRepo = "HasanSelcuk/dating-app-private"; // 🔹 Replace with your GitHub repo name
-        const githubToken = "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"; // 🔹 Replace with your GitHub token
+        const githubToken = "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"; // 🔹 Replace with your GitHub token
         const filePath = "data.json";
         const apiUrl = `https://api.github.com/repos/${githubRepo}/contents/${filePath}`;
     
