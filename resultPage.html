@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Results</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="match.js" defer></script> <!-- Linking match.js -->
+</head>
+<body>
+
+    <h1>E-çöpçatanlık sonuçları</h1>
+    <div id="closedMessage" style="display:none;">
+        <h1>This page is closed now. Please come back later.</h1>
+    </div>
+
+    <div id="loginForm">
+        <input type="text" id="username" placeholder="Twitter tag'in">
+        <input type="password" id="password" placeholder="Şifren">
+        <button onclick="signIn()">Sign In</button>
+    </div>
+
+    <div id="matchInfo" style="display:none;">
+        <h1>Match Results</h1>
+        <div id="matchInfoContent"></div>
+    </div>
+
+    <!-- Optional: Include a logout button or instructions for the user -->
+</body>
+</html>

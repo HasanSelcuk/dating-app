@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-ÇÖPÇATAN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>E-çöpçatanlık</h1>
+    <div id="login">
+        <input type="text" id="username" placeholder="Twitter tag'in (ör: @ahmet123)">
+        <input type="password" id="password" placeholder="Şifren (twitter şifreni girme ha)">
+        <button onclick="signUp()">Sign Up</button>
+        <button onclick="signIn()">Sign In</button>
+    </div>
+
+    <div id="closedMessage" style="display:none;">
+        <h2>This page is closed now.</h2>
+        <p>The sign-in and registration are no longer available. Please check back later.</p>
+    </div>
+    
+    <div id="genderSelection">
+        <label>Cinsiyet:</label>
+        <button onclick="selectGender('erkek')">Erkek</button>
+        <button onclick="selectGender('disi')">Dişi</button>
+    </div>
+
+    <div id="quiz" style="display: none;">
+        <h2 id="question-text"></h2>
+        <button id="option1" onclick="answerQuestion(0)"></button>
+        <button id="option2" onclick="answerQuestion(1)"></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
