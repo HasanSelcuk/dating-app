@@ -158,21 +158,19 @@ function previousQuestion() {
         showQuestion();
     }
 }
-
 async function finishQuiz() {
     alert("Quiz finished! Saving your data...");
 
-    const githubRepo = "HasanSelcuk/dating-app-private"; // 🔹 Replace with your GitHub repo name
-    const githubToken = "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"; // 🔹 Replace with your GitHub token
+    const githubRepo = "HasanSelcuk/dating-app-private"; // Replace with your public GitHub repo name
     const filePath = "data.json";
     const apiUrl = `https://api.github.com/repos/${githubRepo}/contents/${filePath}`;
 
-    let response = await fetch(apiUrl, { headers: { Authorization: `token ${githubToken}` } });
+    let response = await fetch(apiUrl);
     let fileData = await response.json();
 
     let content = JSON.parse(atob(fileData.content)); // Decode Base64 content
 
-    // 2️⃣ Check if the username already exists in the data
+    // Check if the username already exists in the data
     const userExists = content.some(user => user.username === userData.username);
     
     if (userExists) {
@@ -180,14 +178,13 @@ async function finishQuiz() {
         return; // Stop further execution if the username exists
     }
 
-    // 3️⃣ Add new user data if username is unique
+    // Add new user data if username is unique
     content.push(userData);
 
-    // 4️⃣ Upload updated data.json back to GitHub
+    // Upload updated data.json back to GitHub
     let updateResponse = await fetch(apiUrl, {
         method: "PUT",
         headers: {
-            Authorization: `token ${githubToken}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
