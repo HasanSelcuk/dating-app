@@ -37,7 +37,7 @@ const questions = [
 let currentQuestion = 0;
 
 // Set the specific time you want (e.g., 9th February 2025, 19:14:00 on TR timezone yani +3 UTC)
-const cutoffDate = new Date("2025-02-09T16:14:00Z");
+const cutoffDate = new Date("2025-02-11T16:14:00Z");
 
 window.onload = function() {
     checkDate();
