@@ -1,5 +1,5 @@
 // Define the cutoff date for the matching process
-const cutoffDate = new Date("2025-02-11T00:00:00Z"); // UTC Date for matching (can be adjusted based on your needs)
+const cutoffDate = new Date("2025-02-09T00:00:00Z"); // UTC Date for matching (can be adjusted based on your needs)
 
 // Check if the current time is after the cutoff date
 function isMatchOpen() {
